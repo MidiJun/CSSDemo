@@ -1,2 +1,0 @@
-# CSSDemo
-Practice CSS layout
