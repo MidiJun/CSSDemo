@@ -14,9 +14,7 @@
     </q-header>
 
     <q-page-container style="height:100%">
-      <transition>
-        <router-view></router-view>
-      </transition>
+      <router-view />
 
       <!-- 图片风格      
         <div class="parent">
