@@ -20,21 +20,21 @@
     </div>
 
     <!-- 图片的列表区域 -->
-    <ul class="lazyul">
-      <router-link
-        tag="li"
-        v-for="item in photolist"
-        :key="item.id"
-        :to="'/home/photoinfo/' + item.id"
-      >
-        <!-- 注意： v-lazy 要指定图片的地址 -->
-        <img v-lazy="item.img_url" />
-        <div class="info">
-          <h1 class="info-title">{{ item.title }}</h1>
-          <div class="info-content">{{ item.zhaiyao }}</div>
-        </div>
-      </router-link>
-    </ul>
+    <router-link
+      tag="div"
+      v-for="item in photolist"
+      :key="item.id"
+      :to="'/home/photoinfo/' + item.id"
+      class="q-pa-md row items-start q-gutter-md"
+    >
+      <q-card class="my-card">
+        <q-img :src="item.img_url" spinner-color="white" :ratio="16 / 9" basic>
+          <div class="absolute-bottom text-subtitle2 text-center">
+            {{ item.title }}
+          </div>
+        </q-img>
+      </q-card>
+    </router-link>
   </q-page>
 </template>
 
@@ -82,46 +82,12 @@ export default {
 .mui-slider {
   touch-action: pan-x;
 }
-
-.lazyul {
-  margin: 0;
-  padding: 10px;
-
-  li {
-    background-color: #ccc;
-    text-align: center;
-    box-shadow: 0 0 7px gray;
-    position: relative;
-    & + li {
-      // 这种样式的写法，适合场景： 排除第一个，应用给其它所有的li
-      margin-top: 10px;
-    }
-    img {
-      vertical-align: middle;
-      width: 100%;
-    }
-    img[lazy="loading"] {
-      width: 40px;
-      height: 300px;
-      margin: auto;
-    }
-  }
+.mui-segmented-control.mui-segmented-control-inverted
+  .mui-control-item.mui-active {
+  color: #26a69a;
 }
 
-.info {
-  position: absolute;
-  bottom: 0;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.5);
-  max-height: 86px;
-  overflow: hidden;
-  .info-title {
-    font-size: 14px;
-  }
-  .info-content {
-    font-size: 13px;
-    text-align: left;
-    text-indent: 2em;
-  }
+.my-card {
+  width: 100%;
 }
 </style>

@@ -31,12 +31,12 @@ export default {
 <style lang="scss">
 .goodsdesc-container {
   .title {
-    font-size: 16px;
-    margin: 10px 0;
-    color: blue;
+    font-size: 18px;
+    margin: 10px;
     text-align: center;
   }
   .content {
+    margin: 10px;
     img {
       width: 100%;
     }

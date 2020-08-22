@@ -1,5 +1,5 @@
 <template>
-  <div class="mui-numbox" data-numbox-min="1" style="height: 25px;">
+  <div class="mui-numbox" data-numbox-min="1" style="height: 35px;">
     <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
     <!-- 监听文本框的 change 事件，来动态获取选择到的数量 -->
     <input

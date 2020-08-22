@@ -30,7 +30,6 @@ export const seletedObj = state => {
   // id 对用的商品是否被选中了
   let o = {};
   state.cart.forEach(item => (o[item.id] = item.selected));
-  console.log(o);
   return o;
 };
 export const selectedcount = state => {

@@ -10,7 +10,7 @@
           <img class="mui-media-object mui-pull-left" :src="item.img_url" />
           <div class="mui-media-body">
             <h1>{{ item.title }}</h1>
-            <p class="mui-ellipsis">
+            <p class="mui-ellipsis text-primary">
               <span>发表时间：{{ item.add_time | dateFormat }}</span>
               <span>点击：{{ item.click }}次</span>
             </p>
@@ -50,7 +50,6 @@ export default {
     font-size: 14px;
   }
   .mui-ellipsis {
-    color: #26a2ff;
     display: flex;
     justify-content: space-between;
     font-size: 13px;

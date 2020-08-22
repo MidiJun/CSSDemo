@@ -1,14 +1,14 @@
 <template>
   <q-page padding>
     <div class="newsinfo-container">
-      <h3 class="title">{{ newsinfo.title }}</h3>
-      <p class="info">
+      <h3 class="title text-h5">{{ newsinfo.title }}</h3>
+      <p class="info text-primary">
         <span>发表时间：{{ newsinfo.add_time | dateFormat }}</span>
         <span>点击：{{ newsinfo.click }}次</span>
       </p>
       <hr />
       <!-- 新闻内容 -->
-      <div class="content" v-html="newsinfo.content"></div>
+      <div class="content text-body1" v-html="newsinfo.content"></div>
       <!-- 这里评论组件的位置 -->
       <!-- 父组件向子组件传值，通过 属性绑定的形式 -->
       <comment :newsid="id"></comment>
@@ -48,15 +48,7 @@ export default {
 <style lang="scss" scoped>
 .newsinfo-container {
   padding: 3px;
-  .title {
-    font-size: 15px;
-    text-align: center;
-    color: red;
-    margin: 15px 0;
-  }
-
   .info {
-    color: #26a2ff;
     display: flex;
     justify-content: space-between;
   }

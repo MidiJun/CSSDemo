@@ -2,12 +2,10 @@
   <q-layout view="hHh lpR fFf" class="bg-grey-1">
     <q-header elevated class="bg-primary text-white">
       <q-toolbar>
+        <q-btn flat class="child" @click="goBack" v-show="flag">
+          <q-icon left size="2em" name="arrow_back_ios" color="white" />
+        </q-btn>
         <q-toolbar-title>
-          <q-avatar>
-            <q-btn flat class="child" @click="goBack" v-show="flag">
-              <q-icon left size="2em" name="arrow_back_ios" color="white" />
-            </q-btn>
-          </q-avatar>
           Vue&Quasar
         </q-toolbar-title>
       </q-toolbar>
@@ -15,62 +13,6 @@
 
     <q-page-container style="height:100%">
       <router-view />
-
-      <!-- 图片风格      
-        <div class="parent">
-        <div class="child">
-          <q-img
-            src="../img/news.jpg"
-          >
-            <div class="absolute-full text-h4 flex flex-center">
-              新闻资讯
-            </div>
-          </q-img>
-        </div>
-        <div class="child">
-          <q-img src="https://cdn.quasar.dev/img/parallax2.jpg">
-            <div class="absolute-full text-h4 flex flex-center">
-              Caption
-            </div>
-          </q-img>
-        </div>
-        <div class="child">
-          <q-img src="https://cdn.quasar.dev/img/parallax2.jpg">
-            <div class="absolute-full text-h4 flex flex-center">
-              Caption
-            </div>
-          </q-img>
-        </div>
-      </div> -->
-
-      <!--   文字色块风格
-        <div class="q-pa-md  parent absolute-top-left ">
-        <router-link to="/home/newslist">
-          <template>
-            <q-btn flat class="child">
-              <q-icon left size="5em" name="fiber_new" color="primary" />
-              <div class="text-primary text-h4">新闻资讯</div>
-            </q-btn>
-          </template>
-        </router-link>
-        
-        <router-link to="/home/photolist">
-          <template>
-            <q-btn flat class="child">
-              <q-icon left size="5em" name="photo" color="primary" />
-              <div class="text-primary text-h4">图片分享</div>
-            </q-btn>
-          </template>
-        </router-link>
-        <router-link to="/home/goodslist">
-          <template>
-            <q-btn flat class="child">
-              <q-icon left size="5em" name="store" color="primary" />
-              <div class="text-primary text-h4">商品购买</div>
-            </q-btn>
-          </template>
-        </router-link>
-      </div> -->
     </q-page-container>
 
     <q-footer bordered class="bg-white text-primary">
@@ -126,7 +68,6 @@ export default {
     goBack() {
       // 点击返回按钮，向后跳转
       this.$router.go(-1);
-      console.log(this);
     }
   },
   created() {
@@ -153,6 +94,10 @@ export default {
 </script>
 
 <style lang="scss">
+.q-toolbar__title {
+  margin-left: 50px;
+  position: fixed;
+}
 .parent {
   padding-top: 60px;
   padding-bottom: 83px;

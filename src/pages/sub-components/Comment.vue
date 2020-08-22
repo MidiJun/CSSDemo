@@ -1,24 +1,39 @@
 <template>
   <div>
-    <hr />
     <textarea
-      placeholder="请输入要BB的内容（最多吐槽120字）"
+      placeholder="说点什么..."
       maxlength="120"
       v-model="msg"
     ></textarea>
-    <mt-button type="primary" size="large" @click="postMsg">发表评论</mt-button>
+
+    <q-btn
+      color="primary"
+      class="full-width"
+      @click="postMsg"
+      label="发表评论"
+    />
 
     <!-- 评论列表区域 -->
-    <div class="cmt-list">
-      <div class="cmt-item" v-for="(item, i) in cmtlist" :key="i">
-        <div class="cmt-item-title">
-          第{{ i + 1 }}楼&nbsp;用户：{{ item.user_name }}&nbsp;发表时间：{{
-            item.add_time | dateFormat
-          }}
-        </div>
-        <div class="cmt-item-body">{{ item.content }}</div>
+    <q-list class="q-mt-md">
+      <div v-for="(item, i) in cmtlist" :key="i">
+        <q-item>
+          <q-item-section>
+            <q-item-label class="text-grey cmt-user">{{
+              item.user_name
+            }}</q-item-label>
+            <q-item-label>{{ item.content }}</q-item-label>
+          </q-item-section>
+
+          <q-item-section side top>
+            <q-item-label caption>{{
+              item.add_time | dateFormat
+            }}</q-item-label>
+          </q-item-section>
+        </q-item>
+
+        <q-separator spaced inset />
       </div>
-    </div>
+    </q-list>
 
     <mt-button type="danger" size="large" plain @click="loadMore"
       >加载更多</mt-button
@@ -27,9 +42,6 @@
 </template>
 
 <script>
-// 按需从 MintUI 中，导出需要的 弹框组件
-import { Toast } from "mint-ui";
-
 export default {
   data() {
     return {
@@ -95,18 +107,7 @@ textarea {
   font-size: 14px;
   margin: 0;
 }
-.cmt-list {
-  margin-top: 4px;
-  .cmt-item {
-    line-height: 30px;
-    .cmt-item-title {
-      font-size: 14px;
-      background-color: #ddd;
-    }
-    .cmt-item-body {
-      font-size: 13px;
-      text-indent: 2em;
-    }
-  }
+.cmt-user {
+  font-size: 14px;
 }
 </style>

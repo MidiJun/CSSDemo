@@ -1,6 +1,17 @@
 <template>
-  <q-page padding>
-    <div class="photoinfo-container">
+  <q-page>
+    <div class="q-pa-none">
+      <q-carousel animated v-model="slide" arrows navigation swipeable infinite>
+        <q-carousel-slide
+          v-for="(item, index) in photolist"
+          :key="index"
+          :name="index"
+          :img-src="item.src"
+        />
+      </q-carousel>
+    </div>
+
+    <div class="photoinfo-container q-pa-md">
       <h3 class="title">{{ photoinfo.title }}</h3>
 
       <p class="info">
@@ -9,19 +20,6 @@
       </p>
 
       <hr />
-
-      <!-- 缩略图区域 -->
-      <div class="thumb-img-list">
-        <!-- 使用 v-for 循环渲染缩略图 -->
-        <img
-          class="preview-img"
-          v-for="(item, index) in photolist"
-          :src="item.src"
-          height="100"
-          @click="$preview.open(index, photolist)"
-          :key="index"
-        />
-      </div>
 
       <!-- 内容区域 -->
       <div class="content" v-html="photoinfo.content"></div>
@@ -41,7 +39,8 @@ export default {
   data() {
     return {
       photoinfo: {}, // 图片信息
-      photolist: [] // 缩略图的数组
+      photolist: [], // 缩略图的数组
+      slide: 1
     };
   },
   created() {
@@ -76,14 +75,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.photoinfo-container {
-  padding: 3px;
-}
 .title {
-  font-size: 15px;
-  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
   margin: 15px 0;
-  color: #26a2ff;
 }
 .info {
   font-size: 13px;
@@ -93,12 +88,5 @@ export default {
 .content {
   font-size: 13px;
   line-height: 30px;
-}
-
-.thumb-img-list {
-  img {
-    margin: 10px;
-    box-shadow: 0 0 7px gray;
-  }
 }
 </style>

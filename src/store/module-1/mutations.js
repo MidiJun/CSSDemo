@@ -1,8 +1,3 @@
-/*
-export function someMutation (state) {
-}
-*/
-
 export const addToCar = (state, goods) => {
   // 将商品添加到购物车
   // 如果购物车中，之前曾经有这条商品，则只更新数量即可；如果曾经没有，则 直接push
@@ -25,6 +20,7 @@ export const addToCar = (state, goods) => {
   // 为了持久化存储购物车的数据，可以把 购物车的商品，序列化出来，存储到 localStorage 中
   localStorage.setItem("cart", window.JSON.stringify(state.cart));
 };
+
 export const updateGoodsCount = (state, goods) => {
   // 根据传递过来的商品的信息，更新购物车中商品的数量
   state.cart.some(item => {
