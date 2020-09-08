@@ -15,15 +15,15 @@ quasar build
 
 ## 功能与特点
 
-- 日期显示
-- 列表增删
-- 任务增删
-- 任务标记
-- 进度显示
+- 商品列表
+- 懒加载
+- 轮播图
+- 商品详情
+- 用户评评论
+- 购物车
 
-![02](G:\ShoppingApp\02.png)
+![02](https://github.com/MidiJun/Shopping-Webapp/blob/master/displaypic/07.jpg)
 
-![03](G:\ShoppingApp\03.png)
+![03](https://github.com/MidiJun/Shopping-Webapp/blob/master/displaypic/08.jpg)
 
-![04](G:\ShoppingApp\04.png)
-
+![04](https://github.com/MidiJun/Shopping-Webapp/blob/master/displaypic/10.jpg)
