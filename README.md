@@ -1,26 +1,29 @@
-# Quasar App (shopping)
+# Shopping-Webapp
 
-A Quasar Framework app
+## 安装
 
-## Install the dependencies
-```bash
+```
+# install dependencies
 npm install
-```
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
-```bash
+# Development
 quasar dev
-```
 
-### Lint the files
-```bash
-npm run lint
-```
-
-### Build the app for production
-```bash
+# Production(Build)
 quasar build
 ```
 
-### Customize the configuration
-See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
+## 功能与特点
+
+- 日期显示
+- 列表增删
+- 任务增删
+- 任务标记
+- 进度显示
+
+![02](G:\ShoppingApp\02.png)
+
+![03](G:\ShoppingApp\03.png)
+
+![04](G:\ShoppingApp\04.png)
+

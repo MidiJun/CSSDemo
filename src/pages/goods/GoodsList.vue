@@ -9,7 +9,7 @@
         v-for="item in goodslist"
         :key="item.id"
       >
-        <img :src="item.img_url" alt="" />
+        <img v-lazy="item.img_url" alt="" />
         <h1 class="title">{{ item.title }}</h1>
         <div class="info">
           <p class="price">
@@ -26,7 +26,7 @@
       <mt-button
         type="danger"
         size="large"
-        style="margin-top: 10px;"
+        style="margin-top: 10px"
         @click="getMore"
         >加载更多</mt-button
       >
@@ -40,7 +40,7 @@ export default {
     return {
       page: 1, // 默认展示第一页的数据
       goodslist: [], // 商品列表
-      isloaded: false // 节流阀，默认为false,表示没有加载完毕
+      isloaded: false, // 节流阀，默认为false,表示没有加载完毕
     };
   },
   created() {
@@ -67,8 +67,8 @@ export default {
       // 点击加载更多的商品
       this.page++;
       this.getGoodsListByPage();
-    }
-  }
+    },
+  },
 };
 </script>
 

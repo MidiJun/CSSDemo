@@ -26,4 +26,14 @@ import axios from "axios";
 Vue.prototype.$http = axios.create({
   baseURL: "http://api.cms.liulongbin.top/" // 在全局设置 axios 的请求根路径，这样，在发起请求的时候，就可以不写 根地址了
 });
-// 衡水老白干
+
+//lazyload
+import VueLazyload from "vue-lazyload";
+Vue.use(VueLazyload);
+// or with options
+Vue.use(VueLazyload, {
+  preLoad: 1.3,
+  error: "./assets/error.png",
+  loading: "./assets/loading.jpg",
+  attempt: 1
+});
